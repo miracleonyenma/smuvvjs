@@ -33,7 +33,7 @@ document.addEventListener('readystatechange', function(e){
     }
     
 	if(e.target.readyState === "complete"){
-        const suaveLinks = document.querySelectorAll(".suaveLinks"),
+        const suaveLinks = document.querySelectorAll(".suaveLink"),
         linkTarget = [];   
         
         for(i = 0; i < suaveLinks.length; i++){
