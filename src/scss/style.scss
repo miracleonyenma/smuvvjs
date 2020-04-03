@@ -16,6 +16,11 @@
     --headerSideFx-color: var(--bg);
 }
 
+.code-inline{
+    font-family: monospace;
+    color: var(--main);
+}
+
 body{
     background: var(--bg);
     &, *{
@@ -166,15 +171,25 @@ section#intro{
         }
     }
 
-    .code{
+    article{
+        width: 100%;
+        position: relative;
+
         width: 80%;
+        margin: auto;
+        padding: 12px ;
+    }
+
+    .code{
+        width: 100%;
         height: fit-content;
         overflow-x: auto;
         border: 2px solid var(--main);
         padding: 12px;
-        margin: 0 auto;
-        position: relative;
-        transform: translate(0, -100%);
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-50%, -100%);
         background: var(--bg);
         
         &, *{

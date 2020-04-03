@@ -16,6 +16,11 @@
   --headerSideFx-color: var(--bg);
 }
 
+.code-inline {
+  font-family: monospace;
+  color: var(--main);
+}
+
 body {
   background: var(--bg);
 }
@@ -183,18 +188,27 @@ section#intro header h1 {
   margin: 12px;
 }
 
-section#intro .code {
+section#intro article {
+  width: 100%;
+  position: relative;
   width: 80%;
+  margin: auto;
+  padding: 12px;
+}
+
+section#intro .code {
+  width: 100%;
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   overflow-x: auto;
   border: 2px solid var(--main);
   padding: 12px;
-  margin: 0 auto;
-  position: relative;
-  -webkit-transform: translate(0, -100%);
-          transform: translate(0, -100%);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  -webkit-transform: translate(-50%, -100%);
+          transform: translate(-50%, -100%);
   background: var(--bg);
 }
 
