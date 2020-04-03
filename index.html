@@ -3,22 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SuaveJs - LightWeight JavasScript libray for smooth scrolls</title>
+    <title>SuaveJs - Lightweight JavasScript libray for smooth scrolls</title>
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <header>
+    <header id="header-title-nav">
         <h1>SuaveJs</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-                <li><a href="#">Link</a></li>
-            </ul>
-        </nav>
     </header>
+    <nav>
+        <ul>
+            <li><a class="suaveLink"  href="#intro">Download it from Github</a></li>
+            <li><a class="suaveLink"  href="#intro">Quick Setup</a></li>
+            <li><a class="suaveLink"  href="#demo">See it in action</a></li>
+        </ul>
+        <ul class="social" data-content="Say hello! Talk to me! 😁">
+            <li><a href="https://twitter.com/miracleio">Twitter</a></li>
+            <li><a href="https://miracleonyenma.github.io">👤</a></li>
+            <li><a href="https://wa.me/1348125155549?text=Hello!%20%F0%9F%91%8b%f0%9f%8f%be">WhatsApp</a></li>
+        </ul>
+    </nav>
+
+
+    <section id="intro">
+        <header>
+            <h1>SuaveJs is a Light-weight JavasScript library for smooth scroll effects.</h1>
+            <p>Adding it to your project is pretty easy</p>
+        </header>
+        <pre class="code">
+&lt;script src="./suave.js"&gt;&lt;/script&gt;
+<span class="comment">//then initailize it with default options, use "suaveLink" class name on your links</span>
+&lt;script&gt;
+    suaveInit({});
+&lt;/script&gt;</pre>
+    </section>
+
+    <section id="demo">
+        <div id="demo1">
+            <h1>Click the link</h1>
+            <a class="suaveLink"  href="#demo3">Look down below!</a>
+        </div>
+        <div id="demo2">
+            <h1>Click the link</h1>
+            <a class="suaveLink"  href="#intro">This takes you to where you started</a>
+        </div>
+        <div id="demo3">
+            <h1>Click the link</h1>
+            <a class="suaveLink"  href="#demo1">This takes back up, not that up tho</a>
+        </div>
+    </section>
     
     <script src="./src/js/suave.js"></script>
     <script src="./assets/js/script.js"></script>
+    <script>
+        suaveInit({});
+    </script>
 </body>
 </html>

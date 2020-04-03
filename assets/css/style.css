@@ -10,24 +10,41 @@
   --main: hsl(242, 100%, 65%);
   --bg: #fff;
   --alt: hsl(242, 20%, 20%);
+  --header-title-nav-height: calc(50vh + 60px);
+  --header-title-nav-position: absolute;
+  --header-title-nav-z-index: 0;
+  --headerSideFx-color: var(--bg);
 }
 
 body {
   background: var(--bg);
 }
 
-header {
-  background: var(--main);
-  color: var(--bg);
-  position: relative;
+body, body * {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
 }
 
-header h1 {
+body::after, body::before, body *::after, body *::before {
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+header#header-title-nav {
+  background: var(--main);
+  height: var(--header-title-nav-height);
+  color: var(--bg);
+  position: var(--header-title-nav-position);
+  width: 100%;
+  z-index: var(--header-title-nav-z-index);
+}
+
+header#header-title-nav h1 {
   padding: 12px;
   display: inline-block;
 }
 
-header nav {
+nav {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
@@ -49,18 +66,33 @@ header nav {
   right: 0;
   -webkit-transform: translate(-12px, 0%);
           transform: translate(-12px, 0%);
+  z-index: 999;
 }
 
-header nav.nav-is-open {
-  width: 200px;
-  height: 200px;
+nav.nav-is-open {
+  width: calc(100vw - 24px);
+  height: calc(100vh - 27px);
+  border: 2px solid var(--main);
+  -webkit-box-shadow: 0 0 12px rgba(82, 77, 255, 0.42);
+          box-shadow: 0 0 12px rgba(82, 77, 255, 0.42);
 }
 
-header nav.nav-is-open ul {
+nav.nav-is-open::before {
+  -webkit-transform: translateY(5px) rotate(315deg);
+          transform: translateY(5px) rotate(315deg);
+}
+
+nav.nav-is-open::after {
+  -webkit-transform: translateY(-5px) rotate(-315deg);
+          transform: translateY(-5px) rotate(-315deg);
+}
+
+nav.nav-is-open ul {
   opacity: 1;
+  pointer-events: all;
 }
 
-header nav::before {
+nav::before {
   content: "";
   position: absolute;
   top: 15px;
@@ -70,7 +102,7 @@ header nav::before {
   background: var(--main);
 }
 
-header nav::after {
+nav::after {
   content: "";
   position: absolute;
   top: 25px;
@@ -80,8 +112,132 @@ header nav::after {
   background: var(--main);
 }
 
-header nav ul {
+nav ul {
   position: absolute;
   opacity: 0;
+  pointer-events: none;
+  list-style-type: none;
+}
+
+nav ul li a {
+  color: var(--main);
+}
+
+nav ul.social {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: var(--main);
+  padding: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+nav ul.social::before {
+  content: attr(data-content);
+  color: var(--main);
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(12px, calc(-100% - 12px));
+          transform: translate(12px, calc(-100% - 12px));
+}
+
+nav ul.social li {
+  display: inline;
+}
+
+nav ul.social li a {
+  color: var(--bg);
+}
+
+@media screen and (min-width: 548px) {
+  nav {
+    max-width: 568px;
+    max-height: 568px;
+  }
+}
+
+section#intro {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+section#intro header {
+  color: var(--headerSideFx-color);
+  padding: 24px 12px;
+  text-align: center;
+}
+
+section#intro header h1 {
+  font-weight: 300;
+  margin: 12px;
+}
+
+section#intro .code {
+  width: 80%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-x: auto;
+  border: 2px solid var(--main);
+  padding: 12px;
+  margin: 0 auto;
+  position: relative;
+  -webkit-transform: translate(0, -100%);
+          transform: translate(0, -100%);
+  background: var(--bg);
+}
+
+section#intro .code, section#intro .code * {
+  font-family: monospace;
+}
+
+section#intro .code .comment {
+  opacity: 0.5;
+}
+
+section#demo {
+  width: 100%;
+  position: relative;
+}
+
+section#demo div {
+  background: var(--main);
+  height: calc(70vh - 60px);
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+}
+
+section#demo div h1, section#demo div a {
+  color: var(--bg);
+}
+
+section#demo div:nth-of-type(2n) {
+  background: var(--bg);
+}
+
+section#demo div:nth-of-type(2n) h1, section#demo div:nth-of-type(2n) a {
+  color: var(--main);
+}
+
+section#demo div h1 {
+  font-weight: 900;
 }
 /*# sourceMappingURL=style.css.map */
