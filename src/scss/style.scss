@@ -241,6 +241,7 @@ section#demo{
     div{
         background: var(--main);
         height: calc(70vh - 60px);
+        min-height: 300px;
         display: grid;
         align-items: center;
         justify-content: center;
