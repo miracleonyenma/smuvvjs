@@ -13,7 +13,8 @@ document.addEventListener("readystatechange", (e)=>{
 	if(e.target.readyState === "complete"){
         //Document is ready! 
         //Knock yourself out
-        const nav = document.querySelector("nav");
+        const nav = document.querySelector("nav"),
+        copyBtn = document.querySelector("button.copy-btn");
         const docStyles = document.documentElement.style;
         const headerFx = ()=>{
             if(window.scrollY >= 60){
@@ -28,8 +29,12 @@ document.addEventListener("readystatechange", (e)=>{
                 docStyles.setProperty("--header-title-nav-height", "calc(50vh + 60px)");
             }        
         }
-
+        const copyFunc = (e, el)=>{
+            let copyTarget = document.querySelector(e.target.getAttribute("data-target"));
+            console.log(copyTarget);
+        }
         toggle(nav, "click", "nav-is-open");
+        copyBtn.addEventListener("click", copyFunc);
         window.addEventListener("scroll", headerFx);
 	}
 });
