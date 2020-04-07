@@ -1,16 +1,16 @@
 
-//initialize suave
-// function suaveInit({linkEl, dur, ease}){
+//initialize smuvv
+// function smuvvInit({linkEl, dur, ease}){
 //using es6 object destructuring to pass default values to parameters
 //also pass an empty object by default, for when the function is called without any object
-function suaveInit({linkEl = ".suaveLink", dur = 800, ease = easing} = {}){
+function smuvvInit({linkEl = ".smuvvLink", dur = 800, ease = easing} = {}){
     //run code when the dom is interactive - complete
     document.addEventListener('readystatechange', function(e){
         if(e.target.readyState === "complete"){
             console.log(linkEl, dur, ease);
             // check if the function parameters have values
             // if not, assign default values
-            // linkEl == undefined ? linkEl = document.querySelectorAll(".suaveLink") : linkEl = document.querySelectorAll(linkEl)
+            // linkEl == undefined ? linkEl = document.querySelectorAll(".smuvvLink") : linkEl = document.querySelectorAll(linkEl)
             // dur == undefined ? dur = 800 : dur = dur;
             // ease == undefined ? ease = easing : ease = ease;
             
@@ -23,8 +23,8 @@ function suaveInit({linkEl = ".suaveLink", dur = 800, ease = easing} = {}){
                 });
             };    
             console.log(linkEl, dur, ease);
-            //suave has been initialized!
-            suaved = true;
+            //smuvv has been initialized!
+            smuvvd = true;
         
         }
     });
@@ -56,6 +56,6 @@ function smoothScroll(e, dur){
     requestAnimationFrame(animation);
 };
 
-window.addEventListener('load', ()=>{suaved ? suaved = true : console.log("Suave Tip: For suave to work on your site, you need to initialize it:\n \n <script> \n   suaveInit(); \n </script>");})
-//boolean for suave to check if it's been initialized 
-let suaved = false;
+window.addEventListener('load', ()=>{smuvvd ? smuvvd = true : console.log("smuvv Tip: For smuvv to work on your site, you need to initialize it:\n \n <script> \n   smuvvInit(); \n </script>");})
+//boolean for smuvv to check if it's been initialized 
+let smuvvd = false;

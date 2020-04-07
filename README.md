@@ -1,5 +1,5 @@
-# Suave
+# Smuvv
 
 LightWeight JavaScript library for smooth scrolls
 
-> Suave!
+> Smuvv!
