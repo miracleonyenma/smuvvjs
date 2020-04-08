@@ -21,6 +21,10 @@
   color: var(--main);
 }
 
+button {
+  cursor: pointer;
+}
+
 body {
   background: var(--bg);
 }
@@ -292,5 +296,58 @@ section#demo div:nth-of-type(2n) h1, section#demo div:nth-of-type(2n) a {
 
 section#demo div h1 {
   font-weight: 900;
+}
+
+#alert {
+  position: fixed;
+  background: rgba(0, 0, 0, 0);
+  pointer-events: none;
+  visibility: hidden;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0;
+}
+
+#alert, #alert * {
+  -webkit-transition: all 0.12s cubic-bezier(0.6, -0.28, 0.735, 1.25);
+  transition: all 0.12s cubic-bezier(0.6, -0.28, 0.735, 1.25);
+}
+
+#alert.active-alert {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0, 0, 0, 0.09);
+  top: 0;
+  pointer-events: all;
+  visibility: visible;
+  opacity: 1;
+}
+
+#alert.active-alert .msgBox {
+  -webkit-transform: translate(-50%, -50%) scale(1.35);
+          transform: translate(-50%, -50%) scale(1.35);
+}
+
+#alert .msgBox {
+  padding: 12px;
+  color: var(--main);
+  border: 2px solid var(--main);
+  -webkit-box-shadow: 0 0 12px rgba(82, 77, 255, 0.42);
+          box-shadow: 0 0 12px rgba(82, 77, 255, 0.42);
+  position: relative;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%) scale(1);
+          transform: translate(-50%, -50%) scale(1);
+  background: var(--bg);
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  min-width: 100px;
+  min-height: 50px;
 }
 /*# sourceMappingURL=style.css.map */
